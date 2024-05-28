@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "TruckerPath Google Maps Extension",
+  "version": "1.0",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://command.truckerpath.com/load-board/search-loads*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
